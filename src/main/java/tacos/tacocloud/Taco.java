@@ -1,11 +1,23 @@
 package tacos.tacocloud;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public record Taco(String name, List<Ingredient> ingredients) {
+@Data
+@NoArgsConstructor
+public class Taco {
+    private String name;
+    private List<Ingredient> ingredients = new ArrayList<>();
 
-    public Taco() {
-        this("", new ArrayList<>());
+    @Override
+    public String toString() {
+        return "Taco{" +
+                "name='" + name + '\'' +
+                ", ingredients=" + ingredients +
+                '}';
     }
+
 }

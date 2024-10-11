@@ -28,9 +28,7 @@ public class IngredientByIdConverter implements Converter<String, Ingredient> {
 
     @Override
     public Ingredient convert(String id) {
-        if (!ingredientMap.containsKey(id)) {
-            return null;
-        }
+
         return ingredientMap.get(id);
     }
 }
